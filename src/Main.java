@@ -20,11 +20,11 @@ public class Main {
 				continue;
 			}
 
-			if (cmd.equals("system exit")) {
+			if (cmd.equals("exit")) {
 				break;
 			}
 
-			if (cmd.equals("article write")) {
+			if (cmd.equals("write")) {
 				int id = lastArticleId + 1;
 				lastArticleId = id;
 
@@ -52,7 +52,7 @@ public class Main {
 					System.out.printf("%4d 	| %4s	| 	%2d\n", article.id, article.title, article.viewCnt);
 				}
 
-			} else if (cmd.startsWith("article detail")) {
+			} else if (cmd.startsWith("detail")) {
 				String[] cmdBits = cmd.split(" ");
 				int id = Integer.parseInt(cmdBits[2]);
 
@@ -130,9 +130,7 @@ public class Main {
 					continue;
 				}
 
-				// size() -> 3
-				// index -> 0 1 2
-				// id -> 1 2 3
+			
 				articles.remove(foundIndex);
 
 				System.out.printf("%d번 게시물이 삭제 되었습니다\n", id);
